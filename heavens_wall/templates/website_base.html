@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavens Wall | Just Have a Memories</title>
+    <!-- Required meta tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="CDA IT Solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Heavens Wall | Just Have a Memories">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:domain" content="https://www.cdaitsolutions.com">
+    <meta property="twitter:url" content="">
+    <meta name="twitter:title" content="Heavens Wall | Just Have a Memories">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content=" ">
+
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon.jpg" type="image/jpg" sizes="30x30">
+
+    <!-- CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+
+<body {% if home == "home" %} style="background-image: url({% static 'images/haveanswall-banner.jpg' %});" {% else %} class="bg" {% endif %}>
+{{home}}
+<img src="images/heavenswall_logo_new.png" class="img-responsive">
+    <header>
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <a href="#" style="width: 333px;"><img src="{% static 'images/heavenswall_logo_new.png' %}" class="img-responsive"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-div">
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{% url 'website:index' %}">Home</a></li>
+                        <li><a href="{% url 'website:about_us' %}">About us</a></li>
+                        <li><a href="{% url 'website:profiles' %}">Profiles</a></li>
+                        <li><a href="{% url 'website:privacy_policy' %}">Privacy Policies</a></li>
+                        <li><a href="{% url 'website:terms_conditions' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'website:announcement' %}">Announcement </a></li>
+                        <li><a href="{% url 'website:contactus' %}">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            {% block content_inner %}
+
+            {% endblock %}
+        </div>
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>© Heavens Wall 2021. All Right Reserved </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="footer-list">
+                            <ul>
+                                <li><a href="{% url 'website:index' %}">Home</a></li>
+                                <li><a href="{% url 'website:about_us' %}">About Us</a></li>
+                                <li><a href="{% url 'website:profiles' %}">Profiles</a></li>
+                                <li><a href="{% url 'website:privacy_policy' %}">Pricacy Policies</a></li>
+                                <li><a href="{% url 'website:terms_conditions' %}">Terms &amp; Conditions</a></li>
+                                <li><a href="{% url 'website:announcement' %}">Announcement </a></li>
+                                <li><a href="{% url 'website:contactus' %}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="#"><img src="{% static 'images/icon-1.png' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'images/icon-2.png' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'images/icon-3.png' %}" alt=""></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script rel="stylesheet" href="{% static 'js/jquery.min.js' %}"></script>
+    <script rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script>
+        var myVideo = iframe.getElementById('myVideo');
+        myVideo.mute();
+
+    </script>
+
+    {% block extra_js %}
+    {% endblock %}
+</body>
+
+</html>
